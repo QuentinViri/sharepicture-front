@@ -1,0 +1,10 @@
+<h1>All Pictures</h1>
+<hr />
+<div *ngIf="pictures.length > 0">
+  <div *ngFor="let picture of pictures" class="picture">
+    <img [src]="picture.imagePath" [alt]="picture.name" />
+    <div>
+      <span>{{ picture.name }}</span>
+    </div>
+  </div>
+</div>
