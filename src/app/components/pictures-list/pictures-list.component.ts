@@ -11,6 +11,8 @@ import {PictureService} from "../../services/picture.service";
 export class PicturesListComponent implements OnInit, OnDestroy {
 
   pictures: Picture[] = [];
+  currentPicture: Picture = {};
+  currentIndex = -1;
 
   private pictureSubscription: Subscription | undefined;
 
@@ -24,6 +26,12 @@ export class PicturesListComponent implements OnInit, OnDestroy {
         this.pictures = pictures;
       });
   }
+
+  setActivePicture(picture: Picture, index: number): void {
+    this.currentPicture = picture;
+    this.currentIndex = index;
+  }
+
 
   ngOnDestroy(): void {
     this.pictureSubscription?.unsubscribe();

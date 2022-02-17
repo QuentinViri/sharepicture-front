@@ -1,5 +1,5 @@
-export interface Picture {
-  _id: string;
-  name: string;
-  imagePath: string;
+export class Picture {
+  _id?: string;
+  name?: string;
+  imagePath?: string;
 }
