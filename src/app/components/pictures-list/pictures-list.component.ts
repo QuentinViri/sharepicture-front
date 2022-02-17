@@ -2,11 +2,14 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Picture} from "../../models/picture.model";
 import {Subscription} from "rxjs";
 import {PictureService} from "../../services/picture.service";
+import {NgbCarouselConfig} from "@ng-bootstrap/ng-bootstrap";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-pictures-list',
   templateUrl: './pictures-list.component.html',
-  styleUrls: ['./pictures-list.component.css']
+  styleUrls: ['./pictures-list.component.css'],
+  providers: [NgbCarouselConfig]
 })
 export class PicturesListComponent implements OnInit, OnDestroy {
 
@@ -16,7 +19,15 @@ export class PicturesListComponent implements OnInit, OnDestroy {
 
   private pictureSubscription: Subscription | undefined;
 
-  constructor(private pictureService: PictureService) { }
+  constructor(private pictureService: PictureService,
+              private config: NgbCarouselConfig,
+              private  router: Router,
+              private route: ActivatedRoute) {
+    config.interval = 10000;
+    config.wrap = false;
+    config.keyboard = false;
+    config.pauseOnHover = false;
+  }
 
   ngOnInit(): void {
     this.pictureService.getPictures();
@@ -30,6 +41,20 @@ export class PicturesListComponent implements OnInit, OnDestroy {
   setActivePicture(picture: Picture, index: number): void {
     this.currentPicture = picture;
     this.currentIndex = index;
+    console.log(this.currentPicture._id);
+  }
+
+  deleteProject() : void {
+    this.pictureService.deletePicture(this.currentPicture._id)
+      .subscribe(
+        response => {
+          console.log(response);
+          this.router.navigate(['/list-pictures']);
+        },
+        error => {
+          console.log(error)
+        }
+      )
   }
 
 

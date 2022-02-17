@@ -1,1 +1,16 @@
-<app-upload-picture></app-upload-picture><app-pictures-list></app-pictures-list>
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-secondary">
+    <a href="#" class="navbar-brand">CRA</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/upload" class="nav-link" routerLink="upload">Upload Pictures </a>
+      </li>
+      <li class="nav-item">
+        <a href="/list-pictures" class="nav-link" routerLink="list-pictures">List Pictures</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

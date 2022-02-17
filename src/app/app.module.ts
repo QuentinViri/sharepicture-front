@@ -8,6 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { UploadPictureComponent } from './components/upload-picture/upload-picture.component';
 import { PicturesListComponent } from './components/pictures-list/pictures-list.component';
 import { DiapoComponent } from './components/diapo/diapo.component';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 @NgModule({
   declarations: [
@@ -16,12 +17,13 @@ import { DiapoComponent } from './components/diapo/diapo.component';
     PicturesListComponent,
     DiapoComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgbModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

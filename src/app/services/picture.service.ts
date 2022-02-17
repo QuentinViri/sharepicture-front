@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Picture} from "../models/picture.model";
-import {Subject} from "rxjs";
+import {Observable, Subject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import { map } from "rxjs/operators";
 
@@ -48,4 +48,9 @@ export class PictureService {
         this.picture.next(this.pictures);
       });
   }
+
+  deletePicture(id: any): Observable<any> {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
 }

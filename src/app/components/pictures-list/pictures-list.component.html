@@ -1,17 +1,27 @@
-<h1>All Pictures</h1>
-<hr />
-<div *ngIf="pictures.length > 0">
+<div class="container" >
+  <header class="jumbotron">
+    <h1>All Pictures</h1>
+    <hr />
+  </header>
   <ul class="list-group">
     <li
       class="list-group-item"
       *ngFor="let picture of pictures; let i = index"
       [class.active]="i == currentIndex"
       (click)="setActivePicture(picture, i)"
-      >
+    >
       <img [src]="picture.imagePath" [alt]="picture.name" [class.active]="i == currentIndex"
            (click)="setActivePicture(picture, i)"
       />
       {{picture.name}}
     </li>
   </ul>
+  <button
+    type="submit"
+    class="badge badge-success mb-2"
+    (click)="deleteProject()"
+  >
+    Delete
+  </button>
+
 </div>
