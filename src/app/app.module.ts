@@ -10,6 +10,7 @@ import { PicturesListComponent } from './components/pictures-list/pictures-list.
 import { DiapoComponent } from './components/diapo/diapo.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { UpdatePictureComponent } from './components/update-picture/update-picture.component';
+import {SlickCarouselModule} from "ngx-slick-carousel";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { UpdatePictureComponent } from './components/update-picture/update-pictu
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

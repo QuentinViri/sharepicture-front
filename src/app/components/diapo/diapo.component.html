@@ -1,0 +1,14 @@
+<div class="container-fluid">
+
+  <ngb-carousel>
+    <ng-template ngbSlide *ngFor="let picture of pictures">
+      <div class="wrapper">
+        <img [src]="picture.imagePath" alt="Random first slide">
+      </div>
+      <div class="carousel-caption" >
+        <h3>{{ picture.name }}</h3>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+
+</div>
