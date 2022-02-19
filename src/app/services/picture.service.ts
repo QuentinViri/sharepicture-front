@@ -28,6 +28,12 @@ export class PictureService {
       })
   }
 
+  getPicture(id: any): Observable<Picture> {
+    return this.http.get(`${this.url}/${id}`);
+  }
+
+
+
   getPicturesStream() {
     return this.picture.asObservable();
   }
@@ -51,6 +57,10 @@ export class PictureService {
 
   deletePicture(id: any): Observable<any> {
     return this.http.delete(`${this.url}/${id}`);
+  }
+
+  updatePicture(id:any, data:any): Observable<any> {
+    return this.http.put(`${this.url}/${id}`,data)
   }
 
 }

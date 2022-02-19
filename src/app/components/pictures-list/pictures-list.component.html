@@ -15,13 +15,22 @@
       />
       {{picture.name}}
     </li>
+    <style>
+      div.preview-images > img {
+        width: 30%;
+      }
+    </style>
   </ul>
   <button
     type="submit"
-    class="badge badge-success mb-2"
+    class="btn btn-primary"
     (click)="deleteProject()"
+    onClick="window.location.reload()"
   >
     Delete
   </button>
-
+  <a class="btn btn-primary" routerLink="/pictures/{{ currentPicture._id }}">
+    Edit
+  </a>
 </div>
+
