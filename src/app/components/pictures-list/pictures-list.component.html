@@ -3,10 +3,11 @@
     <h1>All Pictures</h1>
     <hr />
   </header>
+
   <ul class="list-group">
     <li
       class="list-group-item"
-      *ngFor="let picture of pictures; let i = index"
+      *ngFor="let picture of pictures ; let i = index"
       [class.active]="i == currentIndex"
       (click)="setActivePicture(picture, i)"
     >
@@ -24,7 +25,7 @@
   <button
     type="submit"
     class="btn btn-primary"
-    (click)="deleteProject()"
+    (click)="deletePicture()"
     onClick="window.location.reload()"
   >
     Delete
@@ -32,6 +33,7 @@
   <a class="btn btn-primary" routerLink="/pictures/{{ currentPicture._id }}">
     Edit
   </a>
+
 </div>
 
 

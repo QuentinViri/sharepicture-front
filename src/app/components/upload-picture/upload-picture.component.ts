@@ -12,6 +12,7 @@ export class UploadPictureComponent implements OnInit {
   form?: FormGroup;
   picture?: Picture;
   imageData?: any;
+  message = '';
 
   constructor(private pictureService: PictureService) { }
 
@@ -39,6 +40,7 @@ export class UploadPictureComponent implements OnInit {
     this.pictureService.addPicture(this.form?.value.name, this.form?.value.image);
     this.form?.reset();
     this.imageData = null;
+    this.message = 'This picture was uploaded successfully!'
   }
 
 

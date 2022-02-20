@@ -11,6 +11,7 @@ import { DiapoComponent } from './components/diapo/diapo.component';
 import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
 import { UpdatePictureComponent } from './components/update-picture/update-picture.component';
 import {SlickCarouselModule} from "ngx-slick-carousel";
+import { FindPictureComponent } from './components/find-picture/find-picture.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
     UploadPictureComponent,
     PicturesListComponent,
     DiapoComponent,
-    UpdatePictureComponent
+    UpdatePictureComponent,
+    FindPictureComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,7 @@ import {SlickCarouselModule} from "ngx-slick-carousel";
     HttpClientModule,
     NgbModule,
     FormsModule,
-    SlickCarouselModule
+    SlickCarouselModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

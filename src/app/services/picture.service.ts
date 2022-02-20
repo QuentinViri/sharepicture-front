@@ -63,4 +63,8 @@ export class PictureService {
     return this.http.put(`${this.url}/${id}`,data)
   }
 
+  findPicture(data: any): Observable<any> {
+    return this.http.get(`${this.url}/find`, data)
+  }
+
 }
